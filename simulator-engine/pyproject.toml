@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voxmaps-pollution-simulator"
+version = "0.2.0"
+description = "Interactive local research simulator for VoxMaps pollution-source testing"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "VoxMaps research simulator contributors"}]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "openpyxl>=3.1",
+  "scipy>=1.11",
+  "pyproj>=3.6",
+  "pydantic>=2.6",
+  "PyYAML>=6.0",
+  "plotly>=5.20",
+  "streamlit>=1.33",
+  "typer>=0.12",
+  "pyarrow>=15.0",
+  "h5py>=3.11",
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "python-multipart>=0.0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "httpx2>=0.1"]
+
+[project.scripts]
+voxmaps-sim = "voxmaps_sim.cli:app"
+voxmaps-desktop = "voxmaps_sim.desktop_launcher:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["voxmaps_sim"]

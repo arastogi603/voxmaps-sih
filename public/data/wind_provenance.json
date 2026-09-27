@@ -1,0 +1,1 @@
+{"meta":{"source_file":"voxmaps-live-demo-20260926_simulated_drone_sensor_log.csv"},"counts":{"interpolated":5925,"measured":6190},"total_rows":12115,"raw_missing_rows":5925,"raw_missing_frac":0.4891,"note":"wind_speed/direction_used_mps/deg fill ~49% raw gaps via linear_vector interpolation (max gap 30 s); H5 reports paired numeric coverage 51.7% < 80% minimum."}

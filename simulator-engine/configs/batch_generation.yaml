@@ -1,0 +1,23 @@
+extends: demo_synthetic_wind.yaml
+project:
+  scenario_id: batch
+batch:
+  scenarios: 100
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  test_fraction: 0.15
+  source_offset_east_m: [-300, 100]
+  source_offset_north_m: [-200, 200]
+  stack_height_m: [30, 100]
+  pm25_emission_g_s: [0.05, 0.50]
+  pm10_total_emission_g_s: [0.20, 1.00]
+  emission_start_fraction: [0.0, 0.25]
+  emission_end_fraction: [0.70, 1.0]
+  wind_speed_mps: [1.0, 7.0]
+  wind_direction_from_deg: [0, 360]
+  wind_variability_mps: [0.0, 1.0]
+  horizontal_diffusivity_m2_s: [1.0, 12.0]
+  additive_noise_std_ug_m3: [0.0, 3.0]
+  sensor_bias_ug_m3: [-2.0, 2.0]
+  response_lag_s: [1.0, 15.0]
+  background_pm25_ug_m3: [5.0, 40.0]

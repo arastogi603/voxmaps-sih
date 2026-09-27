@@ -1,0 +1,72 @@
+{
+  "generated_at_utc": "2026-09-26T17:00:09.710697+00:00",
+  "script": "scripts/build_data.py",
+  "inputs": [
+    {
+      "file": "voxmaps-live-demo-20260926_simulated_drone_sensor_log.csv",
+      "bytes": 4893806,
+      "rows": 12115,
+      "columns": 36
+    },
+    {
+      "file": "voxmaps-five-minute-demo-20260926_simulation_trace.h5",
+      "bytes": 2821865,
+      "h5": {
+        "h5_available": true,
+        "n_frames": 60,
+        "parcel_total": 6000,
+        "root_attrs": {
+          "creation_time_utc": "2026-09-26T09:14:27.098498Z",
+          "random_seed": 42.0,
+          "scenario_name": "voxmaps-five-minute-demo-20260926",
+          "schema_name": "voxmaps_interactive_simulation_trace",
+          "schema_version": "1.0.0",
+          "scientific_scope": "testing/research forward simulation; not CFD or regulatory",
+          "simulation_id": "03c961bc052fd6bf80de2244",
+          "software_version": "0.2.0",
+          "source_csv_filename": "voxmaps-five-minute-input.csv",
+          "source_csv_sha256": "3b247206e15963438cf0325e7f4495f631c66f37d8174f63571fb939d0109243",
+          "source_input_filename": "voxmaps-five-minute-input.csv",
+          "source_input_sha256": "3b247206e15963438cf0325e7f4495f631c66f37d8174f63571fb939d0109243"
+        }
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "file": "flight_track.json",
+      "bytes": 399439
+    },
+    {
+      "file": "plume_encounters.json",
+      "bytes": 133497
+    },
+    {
+      "file": "wind_provenance.json",
+      "bytes": 366
+    },
+    {
+      "file": "voxels.json",
+      "bytes": 2895
+    },
+    {
+      "file": "playback_frames.json",
+      "bytes": 225513
+    }
+  ],
+  "params": {
+    "flight_stride": 10,
+    "playback_max_per_frame": 150,
+    "hotspot_top": 25
+  },
+  "simulation_ids": [
+    "796ac35089064fdf24531b19"
+  ],
+  "disclaimers": [
+    "Forward testing/research simulation only; not CFD and not a regulatory product.",
+    "Sensor columns are synthetic (quantization/noise/lag applied); true columns include fixed background.",
+    "20-minute live CSV carries brief plume transects; 5-minute H5 trace sensor log is background-only (zero contributing parcels).",
+    "Wind 'used' values are interpolated where raw telemetry is missing (~49% raw gaps); see wind_provenance.json.",
+    "10 Hz output rows are heavily hold/interpolated (sensor_interval_hold); treat ~1 Hz as independent samples."
+  ]
+}

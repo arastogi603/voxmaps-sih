@@ -1,0 +1,12 @@
+node_modules/
+/dist/
+.vite/
+*.log
+__pycache__/
+*.pyc
+.env
+.env.*
+brag-output/raw-video/
+brag-output/brag-plan.md
+brag-output/share-copy.txt
+brag-output/record_demo.py

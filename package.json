@@ -1,0 +1,28 @@
+{
+  "name": "voxmaps-sih-demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5182",
+    "dev:full": "concurrently -k -n simulator,dashboard -c green,cyan \"npm run simulator\" \"npm run dev\"",
+    "simulator": "uv run --project simulator-engine python -m uvicorn voxmaps_sim.desktop_api:app --host 127.0.0.1 --port 8766",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5182",
+    "test": "node --test tests/dashboard.test.js"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.1",
+    "lucide-react": "^0.468.0",
+    "maplibre-gl": "^6.11.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.179.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.2.4",
+    "vite": "^6.0.5"
+  }
+}
